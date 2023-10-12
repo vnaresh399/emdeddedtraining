@@ -1,0 +1,62 @@
+before using the variadic function we need to include the declaration.
+
+-->stdarg.h contains the header of the variadic function
+
+-->syntax : 
+            int fname(arg_count,...);   //eg x;
+
+after calling the variadic function in definition we need to take va_list.
+
+--> syntax:
+	va_list variable_name;  // eg k;
+now its time to create the memory for the required number of blocks.
+
+-->  syntax:
+	va_start(k,x);
+
+now to store the data so run the loop from 0 to x; 
+---> how to store or pull the arg for that the funciton is va_arg(k,data_type);
+
+after the task end we need to end the args  va_end(k);
+
+
+
+                  important points
+--------------------------------------------------
+#include<stdarg.h>
+int max(int k,...);         // declaration
+int a = max(4,1,2,3,4);       // function calling 
+
+
+int max(int x,...){        // definiton
+va_list variable_name;
+
+
+va_start(variable_name,x);  //// which pulls the args from ...
+
+
+va_arg(variable_name,data_type);
+
+va_end(variable_name);
+
+return 0;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
